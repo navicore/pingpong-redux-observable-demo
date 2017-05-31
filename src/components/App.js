@@ -26,9 +26,14 @@ const Body = styled.div`
   padding: 20px;
 `;
 
+const Intro = styled.p`
+  font-size: large;
+`;
+
 const Button = styled.button`
   background-color: lightgrey;
-  height: 30px;
+  font-size: small;
+  height: 50px;
   padding: 10px;
   color: palevioletred;
 `;
@@ -45,6 +50,7 @@ const App = ({ isPinging, ping }) => (
       <h2>is pinging: {isPinging.toString()}</h2>
     </Header>
     <Body>
+      <Intro>Press the button - demo of Styled Components</Intro>
       <Button onClick={ping}>Start PING</Button>
     </Body>
   </Outer>
