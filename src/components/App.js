@@ -3,8 +3,17 @@ import logo from "../logo.svg";
 import { connect } from "react-redux";
 import { ping } from "../actions";
 import "rxjs";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import PropTypes from "prop-types";
+
+const rotate360 = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
 const Outer = styled.div`
   text-align: center;
@@ -39,7 +48,8 @@ const Button = styled.button`
 `;
 
 const Logo = styled.img`
-  animation: App-logo-spin infinite 20s linear;
+  animation: ${rotate360} infinite 30s linear;
+  ${props => props.backwards && "animation-direction: reverse"};
   height: 100px;
 `;
 
@@ -47,6 +57,7 @@ const App = ({ isPinging, ping }) => (
   <Outer>
     <Header>
       <Logo src={logo} alt="logo" />
+      <Logo src={logo} alt="logo" backwards={isPinging} />
       <h2>is pinging: {isPinging.toString()}</h2>
     </Header>
     <Body>
