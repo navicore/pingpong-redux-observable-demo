@@ -21,6 +21,7 @@ const Header = styled.div`
 `;
 
 const Body = styled.div`
+  background-color: papayawhip;
   height: 200px;
   padding: 20px;
 `;
