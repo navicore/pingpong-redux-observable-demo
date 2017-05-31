@@ -16,15 +16,20 @@ const Header = styled.div`
   padding: 20px;
   color: white;
   > h2 {
-    color: red;
+    color: palevioletred;
   }
 `;
 
+const Body = styled.div`
+  height: 200px;
+  padding: 20px;
+`;
+
 const Button = styled.button`
-  background-color: grey;
+  background-color: lightgrey;
   height: 30px;
   padding: 10px;
-  color: yellow;
+  color: palevioletred;
 `;
 
 const Logo = styled.img`
@@ -38,7 +43,9 @@ const App = ({ isPinging, ping }) => (
       <Logo src={logo} alt="logo" />
       <h2>is pinging: {isPinging.toString()}</h2>
     </Header>
-    <Button onClick={ping}>Start PING</Button>
+    <Body>
+      <Button onClick={ping}>Start PING</Button>
+    </Body>
   </Outer>
 );
 App.propTypes = {
